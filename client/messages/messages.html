@@ -1,0 +1,47 @@
+<!-- messages.html -->
+<template name="messages">
+	<div class="messages">
+		{{#each messages}}
+		<div class="box message" style=""> 
+			<div class="row">
+				<div class="large-1 columns">
+					<img src="{{user.services.twitter.profile_image_url}}" />
+				</div>
+				<div class="large-11 columns" style="padding: 0px 10px;">
+					<div class="chat_bubble left" style="min-width: 67%; max-width: 90%;">
+						<div>
+							{{user.profile.name}}
+							<span class="right">asked: {{ formatTime createdAt }}</span>
+						</div>
+						<div>
+							<p>
+								{{text}}
+							</p>
+						</div>
+						<div class="right">
+							<i class="icon-star">fav</i> 
+							<i class="icon-location">loc</i> 
+							<i class="icon-comment">
+								<a class="reply-button">
+									{{#if getAllPages.count 0 }}
+									{{getAllPages.count}} replie(s)
+
+									{{else}}
+									No reply
+									{{/if}}
+								</a>
+							</i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="reply_box" id="toggle_{{_id}}" style="display: none;">
+				<div class="">
+					{{> messageReplies messageId=_id}}
+					{{> newReply messageId=_id }}
+				</div>
+			</div>
+		</div>
+		{{/each}}
+	</div>
+</template>

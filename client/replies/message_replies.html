@@ -1,0 +1,36 @@
+<!-- message_replies.html -->
+<template name="messageReplies">
+	{{#if replies}}
+	<div class="replies">
+		{{#each replies}}
+		<div class="reply">
+			<div class="large-11 columns">
+				<div class="chat_bubble right" style="min-width: 57%; max-width: 80%;">
+					<div class="reply_from">
+						Reply From: {{ user.profile.name}}
+						<div class="right">
+							replied: {{ formatTime createdAt }}
+						</div>
+					</div>
+					<p>
+						{{text}}
+					</p>
+					<div>
+						<a class="upvote"><i class="icon-thumbs-up"></i></a>
+						<a class="downvote"><i class="icon-thumbs-down"></i></a>
+					</div>
+				</div>
+			</div>			
+			<div class="large-1 columns">
+				<img src="{{ user.services.twitter.profile_image_url}}"/>
+			</div>
+			<div class="clear"></div>
+		</div>
+		{{/each}}
+	</div>
+	{{else}}
+	<div>
+		Be the first to reply to this message.
+	</div>
+	{{/if}}
+</template>

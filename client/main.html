@@ -1,0 +1,22 @@
+<!-- main.html -->
+<head>
+	<title>Page</title>
+</head>
+<body>
+</body>
+<template name='layout'>
+	<div class="large-6 large-centered columns">
+		<nav style="background-color: #FFF;padding: 8px 16px;">
+			<div class="left">
+				<a href="{{ pathFor 'about' }}">About</a> | 
+				<a href="{{ pathFor 'home' }}">Home</a>
+				{{#if currentUser}}
+				 | <a href="">New Message</a>
+				{{/if}}
+			</div>
+			<div class="right">{{> loginButtons}}</div>
+			<div style="clear: both;"></div>
+		</nav>
+		{{> yield}}
+	</div>
+</template>

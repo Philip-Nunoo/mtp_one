@@ -1,0 +1,16 @@
+<!-- new_reply.html -->
+<template name="newReply">
+	<div class="new_reply">
+		{{#if currentUser}}
+		<form class="form" style="margin: 0px;">
+			<div class="chat_bubble right">
+				<textarea placeholder="Create New Message" id="text_area" required="true" maxlength="140"></textarea>
+				<input type="submit" value="Create" class="button tiny round right" style="margin-bottom: 0px;" id="create"/>
+			</div>
+			<div style="clear: both;"></div>
+		</form>
+		{{else}}
+		Please sign in to create a reply
+		{{/if}}
+	</div>
+</template>

@@ -1,0 +1,52 @@
+{
+  "name": "icon_font",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "acf41aa4018e58d49525665469e35665",
+      "css": "thumbs-up",
+      "code": 59395,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "7533e68038fc6d520ede7a7ffa0a2f64",
+      "css": "thumbs-down",
+      "code": 59396,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "bcdc294bb787b15203b82f2be8096548",
+      "css": "star",
+      "code": 59397,
+      "src": "typicons"
+    },
+    {
+      "uid": "vyuzsm6wijlfwtjo4ifkoblfmsepk6g8",
+      "css": "star-filled",
+      "code": 59398,
+      "src": "typicons"
+    },
+    {
+      "uid": "acb5a542eef1c187078a9af1ede3db01",
+      "css": "comment",
+      "code": 59393,
+      "src": "iconic"
+    },
+    {
+      "uid": "7636185c02f509cf3b305508532a5c05",
+      "css": "comment-alt",
+      "code": 59394,
+      "src": "iconic"
+    },
+    {
+      "uid": "d061c177f823e3ab1eb38085f84efaf2",
+      "css": "location",
+      "code": 59392,
+      "src": "iconic"
+    }
+  ]
+}

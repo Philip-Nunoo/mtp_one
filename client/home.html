@@ -1,0 +1,14 @@
+<!-- home.html -->
+<template name="home">
+	<h1>Home Template</h1>
+	<div>
+		<div class="box" style="background-color: rgba(255,255,255,0.7);">
+			{{#if currentUser}}
+			{{> new_message }}
+			{{/if}}
+		</div>
+		<div>
+			{{> messages }}
+		</div>
+	</div>
+</template>

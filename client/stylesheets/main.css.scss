@@ -1,0 +1,175 @@
+/*main.css.scss*/
+@import 'font';
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,400,300,700,800);
+
+$font-family: 'Open Sans', sans-serif;
+$white: #FFFFFF;
+$border-radius-value: 5px;
+
+body{
+	/*background-color: #dddddd;*/
+	background-image: url(http://www.transparenttextures.com/patterns/dimension.png);
+	/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+	font-weight: 100;
+	font-family: $font-family;
+	font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: $font-family;
+	font-weight: 100;
+}
+
+
+.clear{
+	clear: both;
+}
+
+.replies{
+	display: block;
+
+	.reply{
+		padding: 6px 0px;
+
+		.large-1{
+			padding: 0px;
+
+			img{
+				width: 80%;
+				border-radius: 50%;
+				border: 1px solid;
+				background-color: #000;
+			}
+		}
+
+		.large-11{
+			font-size: 12px;
+
+			.reply_from{
+
+			}
+
+			p{
+				font-size: 11px;
+				letter-spacing: 0.0232em;
+			}
+		}
+	}
+}
+
+.border-radius{
+	border-radius: $border-radius-value;
+}
+
+.box{
+	padding: 10px;
+	background-color: $white;
+	box-shadow: 0px 1px 1px #AAA;
+	border: 1px solid #BBB;
+	min-height: 95px;
+}
+
+.messages{
+	margin: 20px 0px;
+
+	.message{
+		background-color: transparent;
+		box-shadow: none;
+		border: none;
+		padding: 5px 0px;
+		font-size: 13px;
+
+		.large-1{
+			padding: 0px;
+
+			img{
+				width: 100%;
+				border-radius: 25%;
+				border: 1px solid #888;
+			}
+		}
+		p{
+			font-size: 12px;
+		}
+
+		.reply_box{
+			margin: 12px 0px;
+			border: 1px dashed #AAA;
+			padding: 10px 15px;
+			border-radius: 5px;			
+		}
+	}
+}
+
+.form{
+	textarea{
+		height: 75px;
+		resize: none;
+		font-size: 13px;
+		line-height: 1.5em;
+	}
+}
+
+/* Chat bubble*/
+.chat_bubble{
+	background: #A1D1D1;
+	display:inline-block;
+	padding:13px;
+	/*width:87%;*/
+	border-radius:2px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	position:relative;
+
+	&.right{
+		&:after{
+			content:"";
+			position:absolute;
+			display:block;
+			right:0;
+			border-left:6px solid #A1D1D1;
+			border-top: 6px solid transparent;
+			border-bottom:6px solid transparent;
+			top:10px;
+			margin-right:-6px;
+		}
+	}
+
+	&.left{
+		&:before{
+			content:"";
+			position:absolute;
+			display:block;
+			left:0;
+			border-right:6px solid #A1D1D1;
+			border-top: 6px solid transparent;
+			border-bottom:6px solid transparent;
+			top:10px;
+			margin-left:-6px;
+		}
+	}
+}
+
+.new_reply{
+	font-size: 12px;
+
+	textarea{
+		width: 425px;
+		font-size: 12px;
+		height: 20px;
+		background-color: rgba(0,0,0,0.3);
+
+		&:active{
+			height: 90px;
+			border: none;
+			color: #FFF;
+		}
+
+		&:focus{
+			height: 90px;
+			border: none;
+			color: #000;
+			box-shadow: none;
+			background-color: rgba(255,255,255,0.5);
+		}
+	}
+}
