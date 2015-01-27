@@ -8,11 +8,12 @@ Reply = function(doc) {
 	Getting all messages link to a comment
 */
 _.extend(Reply.prototype, {
-	downVote: function(){
-		console.log("downvoted item: " + this._id);
+	downVotes: function(){
+		return ReplyVotes.find({replyId: this._id, vote: 'down'}).count();
 	},
-	upVote: function(){
-		console.log("upvoted item: " + this._id);
+	upVotes: function(){
+		// console.log("upvoted item: " + this._id);
+		return ReplyVotes.find({replyId: this._id, vote: 'up'}).count();
 	},
 	getDateCreated: function(){
 		return this.createdAt;

@@ -6,17 +6,29 @@ Template.messageReplies.helpers({
 });
 
 Template.messageReplies.events({
-	'click .upvote': function (e) {
+	'click .reply-vote': function (e) {
 		// upvote the reply
 		e.preventDefault();
+
+		vote = $(e.currentTarget).data('vote');
 		
-		/*ReplyVotes.update(
-			{ replyId: this._id, user: Meteor.userId() }, { 
-				$set: {vote: 'up'}
-			}), 
-		// 	{ upsert: true }
-		// );*/
-		console.log(this._id);
+		replyVote = ReplyVotes.findOne({$and: [{user:Meteor.userId()},{replyId: this._id}]});
+
+		if (replyVote){
+			ReplyVotes.update({_id: replyVote._id}, {$set: {vote: vote}}, function(e,r){
+				console.log(e);
+				console.log(r);
+			});
+
+		} else {
+			ReplyVotes.insert(
+				{
+					user: Meteor.userId(),
+					vote: vote,
+					replyId: this._id
+				}
+			)
+		}
 	},
 	'click .downvote': function(e){
 		// downvote the reply
